@@ -39,5 +39,15 @@ while(s >= err)
     
 end
 q
-    
+
+% Framvirk skekkja af niðurstöðu Newton fylkis úr part3
+framvirk = norm(N);
+
+% Afturvirk skekkja af niðurstöðu vigurs úr part3
+afturvirk = norm(b);
+
+framvirk
+
+afturvirk
+
 end 
