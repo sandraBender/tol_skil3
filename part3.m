@@ -6,14 +6,14 @@
 % fallið norm() og til að leysa línulegt
 % jöfnuhneppi Ax = b í matlab þá má nota aðgerðina A \ b.
 
-function out=part3()
+function out=part3(q,x)
 format long
 
 % Upphafsgisk gott gisk
-q = 0.1*ones(7,1);
+%q = 0.1*ones(7,1);
 
 % Skrefin
-x = 100;
+%x = 100;
 
 % Error - 6 markverdir
 err = 0.5*10^-6;
@@ -38,16 +38,12 @@ while(s >= err)
     s = norm(N); 
     
 end
-q
+out=q;
 
 % Framvirk skekkja af niðurstöðu Newton fylkis úr part3
 framvirk = norm(N);
 
 % Afturvirk skekkja af niðurstöðu vigurs úr part3
 afturvirk = norm(b);
-
-framvirk
-
-afturvirk
 
 end 
