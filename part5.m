@@ -40,7 +40,7 @@ legend('q1','q2','q3','q4','q5','q6','q7');
 
 % -- PART 6 --
 
-% Golden section search (from book), takes Newton function in as parameter, interval from [1;199] and number of steps is 22. 
+% Golden section search (from book), takes Newton function in as parameter, interval from [1;199] and number of steps is 22 (an arbitrary number). 
 g = gss(@part66, 1, 199, 22);
 
 % Plot q3 on interval x
