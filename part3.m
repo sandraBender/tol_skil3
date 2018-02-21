@@ -1,39 +1,33 @@
-% Notið Aðferð Newtons til að nálga rót fallsins f út frá upphafságiskuninni 
-% q=0.1*ones(7,1) með 6 markverðum
-% aukastöfum. Útkoman sem þið ættuð að fá (skrifuð hér með 4 aukastöfum) er
+% NotiÃ° AÃ°ferÃ° Newtons til aÃ° nÃ¡lga rÃ³t fallsins f Ãºt frÃ¡ upphafsÃ¡giskuninni 
+% q=0.1*ones(7,1) meÃ° 6 markverÃ°um
+% aukastÃ¶fum. Ãštkoman sem Ã¾iÃ° Ã¦ttuÃ° aÃ° fÃ¡ (skrifuÃ° hÃ©r meÃ° 4 aukastÃ¶fum) er
 % q = [0.2388, 0.0869, 0.0330, 0.539, 0.0869, 0.1519, 0.2388]T.
-% Ath: Til að meta stærð á vigri (t.d. kxk ? xk?1k) getið þið notað matlab 
-% fallið norm() og til að leysa línulegt
-% jöfnuhneppi Ax = b í matlab þá má nota aðgerðina A \ b.
+% Ath: Til aÃ° meta stÃ¦rÃ° Ã¡ vigri (t.d. kxk ? xk?1k) getiÃ° Ã¾iÃ° notaÃ° matlab 
+% falliÃ° norm() og til aÃ° leysa lÃ­nulegt
+% jÃ¶fnuhneppi Ax = b Ã­ matlab Ã¾Ã¡ mÃ¡ nota aÃ°gerÃ°ina A \ b.
 
 function out=part3(q,x)
 format long
 
-% Upphafsgisk gott gisk
-%q = 0.1*ones(7,1);
-
-% Skrefin
-%x = 100;
-
-% Error - 6 markverdir
+% Error - 6 significant figures
 err = 0.5*10^-6;
 
-% Meta stærð vigurs, upphafsstillt í 1 svo við komumst í while loop
+% Initial value of the size of the vector. 
 s = 1;
 
-% Ítrum
+% Loop until the size of the vector is larger than or equal to the error 
 while(s >= err)
-    % Sækjum vigurinn úr part1 
+    % Get the vector form part1 
     b = part1(q,x);
     
-    % Sækjum Jacobi úr part2
+    % Get the Jacobi matrix from part2
     A = part2(q,x);
     
-    % Nálgar rót fallsins f(q) með aðferð Newtons
+    % Approximates the root of the function f(q), using Newton's method 
     N = A\-b;
     q = q+N;
     
-    % Meta stærð vigurs
+    % Evaluate the size of the vector
     s = norm(N); 
     
 end
@@ -41,10 +35,10 @@ out=q;
 
 % -- PART 4 --
 
-% Framvirk skekkja af niðurstöðu Newton fylkis úr part3
-framvirk = norm(N);
+% Forward error of the result from Newton's method from part3
+forward = norm(N);
 
-% Afturvirk skekkja af niðurstöðu vigurs úr part3
-afturvirk = norm(b);
+% Backwards error of the result of the vector from part3
+backward = norm(b);
 
 end 
