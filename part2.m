@@ -2,22 +2,8 @@
 % forrit sem reiknar fylkið. Forritið getur
 % t.d. verið á forminu
 
+%TODO: Name Jacobi
 function out=part2(q,x);
-
-% 7 víður vigur
-q=0.1*ones(7,1);
-
-% Skref
-x=100;
-
-% Innanverður radíus allra röra
-d=0.2;
-
-% Darcy núningsstuðull
-f=0.02;
-
-% Þéttleiki vökvans
-rho=998;
 
 % Lengdir [m]
 L1 = 100;
@@ -28,10 +14,7 @@ L5 = x;
 L6 = 75;
 L7 = 50;
 
-% Yfirþrýstingur [Pa]
-deltap = 5.2*10^5;
-
-% Kallar á part22 sem reiknar og skilar Jacobi fylki
-br = part22(q,x)
+% Reiknar og skilar Jacobi fylki
+out = [1,-1,0,0,0,-1,0; 0,1,-1,-1,0,0,0; 0,0,1,1,-1,0,0;0,0,0,0,1,1,-1;0,0,2*L3*q(3),-2*L4*q(4),0,0,0; 0,2*L2*q(2),0,2*L4*q(4),2*L5*q(5), -2*L6*q(6),0; 2*L1*q(1),0,0,0,0,2*L6*q(6),2*L7*q(7)];
 
 end
