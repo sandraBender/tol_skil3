@@ -1,15 +1,17 @@
-% Reiknið æðið í öllum rörunum fyrir x-gildi á bilinu [1, 199] og 
-% sýnið niðustöðurnar ykkar á (helst einu) gra.
+% ReikniÃ° Ã¦Ã°iÃ° Ã­ Ã¶llum rÃ¶runum fyrir x-gildi Ã¡ bilinu [1, 199] og 
+% sÃ½niÃ° niÃ°ustÃ¶Ã°urnar ykkar Ã¡ (helst einu) gra.
 
 function out=part5()
 
-% Upphafsgisk gott gisk
+% Educated first guess
 q = 0.1*ones(7,1);
 
-% Reikna flæði á gefnu bili x
+% Reikna flÃ¦Ã°i Ã¡ gefnu bili x
+% Calculate the flow of a given interval x
 x = 1:1:199;
 
-% Sækja flæðið í öllum rörum
+% SÃ¦kja flÃ¦Ã°iÃ° Ã­ Ã¶llum rÃ¶rum
+% Calculate the flow in all pipes 
 for i = 1:length(x)
     q = part3(q,i);
     q1(i) = q(1);
@@ -21,7 +23,7 @@ for i = 1:length(x)
     q7(i) = q(7);
 end
 
-% Plottaða
+% Plot the flow of each pipe on the interval 
 figure()
 plot(x, q1, 'y');
 hold on
@@ -32,17 +34,19 @@ plot(x, q5, 'm');
 plot(x, q6, 'k');
 plot(x, q7, 'b'); 
 hold off
+xlabel('Relative length of the pipes [1;199]);
+ylabel('Flow of liquid');
 legend('q1','q2','q3','q4','q5','q6','q7');
 
 % -- PART 6 --
 
-% Gullsniðilsaðferðin (úr bókinni) tekur newton fall inn sem parameter
+% Golden section search (from book), takes Newton function in as parameter, interval from [1;199] and number of steps is 22. 
 g = gss(@part66, 1, 199, 22);
 
-% Plottum q3 á hverju bili í x
+% Plot q3 on interval x
 figure();
 plot(x, q3, 'r'); hold on
-% q3 í rót fallsins (0.033 er q3 með 2 markverðum aukastöfum)
+% Plot the root of function q3 (0.033 is q3 with 3 significant figures)
 plot(g, 0.033, 'bo'); hold off
 
 end 
