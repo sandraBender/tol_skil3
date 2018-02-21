@@ -20,7 +20,6 @@ err = 0.5*10^-6;
 
 % Meta stærð vigurs, upphafsstillt í 1 svo við komumst í while loop
 s = 1;
-i = 6;
 
 % Ítrum
 while(s >= err)
@@ -39,6 +38,8 @@ while(s >= err)
     
 end
 out=q;
+
+% -- PART 4 --
 
 % Framvirk skekkja af niðurstöðu Newton fylkis úr part3
 framvirk = norm(N);
