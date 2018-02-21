@@ -6,15 +6,38 @@
 function out=part1(q,x);
 % 7 víður vigur
 q=0.1*ones(7,1);
+
+% Skref
 x=100;
-% innanverður radíus allra röra
+
+% Innanverður radíus allra röra
 d=0.2;
+
 % Darcy núningsstuðull
 f=0.02;
-% þéttleiki vökvans
-p=998
 
-f(q)=[q1-q2-q6, q2-q3-q4, q3+q4-q5, q5+q6-q7, L3*q3^2-L4*q4^2, ...
-    L2*q2^2+L4*q4^2+L5*q5^2-L6*q6^2, L1*q1^2+L6*q6^2+L7*q7^2-((pi^2*d^5)/(8*f*p))*deltap0];
+% Þéttleiki vökvans
+rho=998;
+
+% Lengdir [m]
+L1 = 100;
+L2 = x;
+L3 = (400)-2*x;
+L4 = 75;
+L5 = x;
+L6 = 75;
+L7 = 50;
+
+% Yfirþrýstingur [Pa]
+deltap = 5.2*10^5;
+
+
+out=[q(1,1)-q(2,1)-q(6,1); 
+   q(2,1)-q(3,1)-q(4,1); 
+   q(3,1)+q(4,1)-q(5,1); 
+   q(5,1)+q(6,1)-q(7,1); 
+   L3*q(3,1)^2-L4*q(4,1)^2;
+   L2*q(2,1)^2+L4*q(4,1)^2+L5*q(5,1)^2-L6*q(6,1)^2; 
+   L1*q(1,1)^2+L6*q(6,1)^2+L7*q(7,1)^2-((pi^2*d^5)/(8*f*rho))*deltap]';
 
 end
