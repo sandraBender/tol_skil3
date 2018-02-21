@@ -30,25 +30,8 @@ L7 = 50;
 
 % Yfirþrýstingur [Pa]
 deltap = 5.2*10^5;
- 
-% Darcy-Weisbach jafnan
-%deltap = ((8*f*rho*L)/((pi^2)*(d^5)))*q^2;
 
-q1 = q(1,1)-q(2,1)-q(6,1); 
-q2 = q(2,1)-q(3,1)-q(4,1); 
-q3 = q(3,1)+q(4,1)-q(5,1); 
-q4 = q(5,1)+q(6,1)-q(7,1); 
-q5 = L3*q(3,1)^2-L4*q(4,1)^2;
-q6 = L2*q(2,1)^2+L4*q(4,1)^2+L5*q(5,1)^2-L6*q(6,1)^2; 
-q7 = L1*q(1,1)^2+L6*q(6,1)^2+L7*q(7,1)^2-((pi^2*d^5)/(8*f*rho))*deltap;
-
-syms q1 q2 q3 q4 q5 q6 q7
-f = [q1,q2,q3,q4,q5,q6,q7]
-v = [q1;q2;q3;q4;q5;q6;q7]
-
-J = jacobian(f, v);
-J
-
-
+% Kallar á part22 sem reiknar og skilar Jacobi fylki
+br = part22(q,x)
 
 end

@@ -36,20 +36,16 @@ syms q1 q2 q3 q4 q5 q6 q7
 
 % Finna 7x7 Jacobi fylkið
 J = jacobian([q1-q2-q6, q2-q3-q6, q3+q4-q5, q5+q6-q7, (L3*q3^2)-(L4*q4^2), (L2*q2^2)+(L4*q4^2)+(L5*q5^2)-(L6*q6^2), (L1*q1^2)+(L6*q6^2)+(L7*q7^2)-(((pi^2)*(d^5))/(8*f*rho)*deltap)],[q1,q2,q3,q4,q5,q6,q7]);
-J
-%dominant = true; 
-%for i=1:7
-%    checkdom = abs(J(i,i));
-%    checkelem = sum(abs(J(i,:)));
-%    if checkelem > checkdom
-%        dominant = true;
-%    end
-%end
 
-% n-stærð fylkis
-% c = size(J,1);
-% Index á hornalínu
-% idx = 1:c+1:numel(J);
-% Stökin í hornalínu
-% v = J(idx);
+% Færa inn gildin úr q-fylki inn í Jacobi
+q1 = q(1);
+q2 = q(2);
+q3 = q(3);
+q4 = q(4);
+q5 = q(5);
+q6 = q(6);
+q7 = q(7);
+
+out=subs(J);
+
 
