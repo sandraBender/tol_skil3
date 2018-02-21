@@ -1,20 +1,20 @@
-% Skrið matlab forrit fyrir vigurfallið í jöfnu (4). Forritið getur t.d. verið á forminu
-% þar sem q er 7-víður vigur. Fyrir gildin q=0.1*ones(7,1) og x=100 
-% þá ætti fallið að gefa vigurinn
+% Skriï¿½ matlab forrit fyrir vigurfalliï¿½ ï¿½ jï¿½fnu (4). Forritiï¿½ getur t.d. veriï¿½ ï¿½ forminu
+% ï¿½ar sem q er 7-vï¿½ï¿½ur vigur. Fyrir gildin q=0.1*ones(7,1) og x=100 
+% ï¿½ï¿½ ï¿½tti falliï¿½ aï¿½ gefa vigurinn
 % out = [?0.1000, ?0.10000, 0.10000, 0.10000, 1.25000, 2.00000, ?8.03496]T.
 
 function out=part1(q,x);
 
-% Innanverður radíus allra röra
+% Inside radius of the pipes
 d=0.2;
 
-% Darcy núningsstuðull
+% Darcy friction factor
 f=0.02;
 
-% Þéttleiki vökvans
+% Fluid density
 rho=998;
 
-% Lengdir [m]
+% Lenghts of pipes [m]
 L1 = 100;
 L2 = x;
 L3 = (400)-2*x;
@@ -23,7 +23,7 @@ L5 = x;
 L6 = 75;
 L7 = 50;
 
-% Yfirþrýstingur [Pa]
+% Water pressure (above 1 atm) [Pa]
 deltap = 5.2*10^5;
 
 
