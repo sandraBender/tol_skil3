@@ -34,8 +34,8 @@ plot(x, q5, 'm');
 plot(x, q6, 'k');
 plot(x, q7, 'b'); 
 hold off
-xlabel('Relative length of the pipes [1;199]);
-ylabel('Flow of liquid');
+xlabel('Relative length of the pipes [1;199] in [m]);
+ylabel('Flow of liquid in [m^3/s]');
 legend('q1','q2','q3','q4','q5','q6','q7');
 
 % -- PART 6 --
