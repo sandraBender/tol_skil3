@@ -34,7 +34,7 @@ plot(x, q5, 'm');
 plot(x, q6, 'k');
 plot(x, q7, 'b'); 
 hold off
-xlabel('Relative length of the pipes on interval [1;199] in [m]);
+xlabel('Relative length of the pipes on interval [1;199] in [m]');
 ylabel('Flow of liquid in [m^3/s]');
 legend('q1','q2','q3','q4','q5','q6','q7');
 
@@ -46,7 +46,7 @@ g = gss(@part66, 1, 199, 22);
 % Plot q3 on interval x
 figure();
 plot(x, q3, 'r'); hold on
-xlabel('Relative length of the pipe q3 on interval [1;199] in [m]);
+xlabel('Relative length of the pipe q3 on interval [1;199] in [m]');
 ylabel('Flow of liquid in [m^3/s]');
 
 % Plot the root of function q3 (0.033 is q3 with 3 significant figures)
