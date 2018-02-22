@@ -1,4 +1,4 @@
-function q3=part66(x)
+function out=part6(x)
 
 % Upphafsgisk gott gisk
 q = 0.1*ones(7,1);
@@ -15,7 +15,7 @@ while(s >= err)
     b = part1(q,x);
     
     % Sækjum Jacobi úr part2
-    A = part2(q,x);
+    A = Jac(q,x);
     
     % Nálgar rót fallsins f(q) með aðferð Newtons
     N = A\-b;
@@ -25,6 +25,6 @@ while(s >= err)
     s = norm(N); 
     
 end
-q3 = q(3);
+out = q(3);
 
 end
