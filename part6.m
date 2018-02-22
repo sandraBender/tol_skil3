@@ -1,30 +1,29 @@
 function out=part6(x)
 
-% Upphafsgisk gott gisk
-q = 0.1*ones(7,1);
-
-% Error - 6 markverdir
+% Error - 6 significant figures
 err = 0.5*10^-6;
 
-% Meta stærð vigurs, upphafsstillt í 1 svo við komumst í while loop
+% Initial value of the size of the vector. 
 s = 1;
 
-% Ítrum
+% Loop until the size of the vector is larger than or equal to the error 
 while(s >= err)
-    % Sækjum vigurinn úr part1 
+    
+    % Get the vector from part1 
     b = part1(q,x);
     
-    % Sækjum Jacobi úr part2
+    % Get the Jacobi matrix from part2
     A = Jac(q,x);
     
-    % Nálgar rót fallsins f(q) með aðferð Newtons
+    % Approximates the root of the function f(q), using Newton's method 
     N = A\-b;
     q = q+N;
     
-    % Meta stærð vigurs
+    % Evaluate the size of the vector
     s = norm(N); 
     
 end
+
 out = q(3);
 
 end
