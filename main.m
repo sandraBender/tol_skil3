@@ -76,7 +76,7 @@ fprintf('[%.6g, %.6g, %.6g, %.6g, %.6g, %.6g, %.6g]\n\n',fq(1),fq(2),fq(3),fq(4)
 %% Task 4: 
 % Determine the forward and backward error for the results from task 3. 
 
-backward = norm(b);
+backward = norm(b,inf);
 fprintf('Task 4: Relative backward error\n');
 disp(backward);
 
