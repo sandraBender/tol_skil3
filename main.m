@@ -140,7 +140,7 @@ hold on
 % Plot the root of function q3 (0.033 is min(q3) with 3 significant figures)
 plot(g, 0.033, 'bo'); 
 hold off
-xlabel('Relative length of the pipes on interval x = [1;199] in [m]');
+xlabel('Relative length of q3 on interval x = [1;199] in [m]');
 ylabel('Flow of liquid in [m^3/s]');
 legend('Interval x', 'GSS');
 

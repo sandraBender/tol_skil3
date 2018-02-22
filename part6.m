@@ -1,5 +1,8 @@
 function out=part6(x)
 
+% Educated first guess
+q = 0.1*ones(7,1);
+
 % Error - 6 significant figures
 err = 0.5*10^-6;
 
